@@ -1,1 +1,0 @@
-//this foulder contains any common functions ( .ts ) files, that we'll use multiple times in our website :)
