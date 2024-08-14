@@ -1,3 +1,11 @@
+/* EmailSubscription.css */
+
+/* إذا كنت تريد تعيين أنماط خلفية للمكون الخاص بالاشتراك عبر البريد الإلكتروني، يمكنك استخدام هذه الأنماط */
+.email-subscription {
+    /* ضع هنا الأنماط الخاصة بالخلفية إذا كانت جزءًا من هذا المكون */
+  }
+  
+  /* إعدادات التصميم الأساسية للنص */
   .email-subscription p {
     color: white;
     font-weight: normal;
@@ -5,12 +13,14 @@
     margin-bottom: 1rem;
   }
   
+  /* إعدادات التصميم للحاوية التي تحتوي على حقل البريد الإلكتروني وزر الاشتراك */
   .email-subscription .buttons {
     display: flex;
     justify-content: center;
     gap: 1rem;
   }
   
+  /* إعدادات التصميم لحقل البريد الإلكتروني */
   .email-input {
     max-width: 250px;
     margin-right: 30px;
