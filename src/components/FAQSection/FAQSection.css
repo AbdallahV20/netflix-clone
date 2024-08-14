@@ -1,0 +1,42 @@
+.faq-section {
+    background-color: var(--netflix-black);
+    color: #fff;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+    border-top: 10px solid var(--netflix-gray); 
+}
+
+.faq-section .container {
+    max-width: 800px;
+}
+
+.accordion-button {
+    background-color: var(--netflix-gray); 
+    color: #fff; 
+    border: 1px solid var(--netflix-gray); 
+    font-size: 1.25rem; 
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.accordion-button.collapsed {
+    background-color: #333;
+    border-color: #333; 
+}
+
+.accordion-button:hover {
+    background-color: #555; 
+    border-color: #555; 
+}
+
+.accordion-body {
+    background-color: #555;
+    color: #fff; 
+    padding: 1rem; 
+}
+
+.accordion-item {
+    border: none; 
+    margin-bottom: 1rem; 
+}

@@ -1,30 +1,37 @@
 import './LandingPage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
+import logo from '../../assets/images/netflix-logo.svg';
 import '../../components/MiddleSection/MiddleSection';
 import MiddleSection from '../../components/MiddleSection/MiddleSection';
-
+import FAQSection from '../../components/FAQSection/FAQSection';
+import EmailSubscription from '../../components/EmailSubscription/EmailSubscription';
 const LandingPage = () => {
   return (
     <div>
-      <nav className="navbar container-fluid">
-        <a className="navbar-brand logo" href="#">Netflix</a>
-        <div className="ml-auto">
-          <button className="btn btn-outline-light mx-2">Select Language</button>
-          <button className="btn btn-outline-light">Sign In</button>
-        </div>
-      </nav>
-      <div className="background d-flex flex-column justify-content-center align-items-center">
-        <div className="content text-center">
-          <h1>Unlimited movies, TV shows, and more</h1>
-          <p>Watch anywhere. Cancel anytime.</p>
-          <p>Ready to watch? Enter your email to create or restart your membership.</p>
-          <div className="mt-3 w-100 d-flex justify-content-center buttons">
-            <input type="email" className="form-control email-input ps-3 pe-3 pt-1 pb-1" placeholder="Email address" />
-            <button className="btn btn-danger get-started-btn ms-1 ps-3 pe-3 pt-1 pb-1" type="button">Get Started</button>
+      <section className="navbar">
+        <nav className="container-fluid">
+          <div className="row w-100 justify-content-center align-items-center py-4">
+            <div className="col-4">
+              <a className="navbar-brand logo" href="#">
+                <img src={logo} alt="Netflix Logo" className="logo-img" />
+              </a>
+            </div>
+            <div className="col-4 text-end">
+              <ButtonComponent type="select" />
+              <ButtonComponent text="Sign In" type="button" />
+            </div>
           </div>
+        </nav>
+      </section>
+      <section className="background d-flex flex-column justify-content-center align-items-center">
+        <div className="overlay"></div>
+        <div className="content text-center">
+          <h1 className="py-3 fw-bold">Unlimited movies, TV shows, and more</h1>
+          <p className="py-4 fw-normal">Watch anywhere. Cancel anytime.</p>
+<EmailSubscription />
         </div>
-      </div>
-
+      </section>
       <section>
           <MiddleSection title='Enjoy on your TV' 
                          subtitle='Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.'
@@ -52,6 +59,9 @@ const LandingPage = () => {
                             image='https://occ-0-3311-2706.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png?r=f55'
                             video=''
                             textLeft={false}/>
+      </section>
+      <section>
+      <FAQSection />
       </section>
     </div>
   );

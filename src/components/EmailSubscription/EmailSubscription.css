@@ -1,0 +1,26 @@
+  .email-subscription p {
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .email-subscription .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .email-input {
+    max-width: 250px;
+    margin-right: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem;
+  }
+  
+  .email-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
