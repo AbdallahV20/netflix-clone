@@ -2,7 +2,7 @@
 :root {
   --netflix-red: #e50914;
   --netflix-red-hover: #b20710;
-  --netflix-gray: #564d4d;
+  --netflix-gray: #aab6b8;
   --netflix-black: #000;
   --netflix-white: #fff;
 }
@@ -34,10 +34,14 @@
 
 /* Global Styles */
 * {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
+  color: var(--netflix-white);
+  font-family: NetflixSans, Arial, Helvetica, sans-serif;
 }
 ul {
   list-style: none;
 }
-
+a {
+  text-decoration: none;
+}

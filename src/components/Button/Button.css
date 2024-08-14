@@ -1,0 +1,10 @@
+.btn-netflix {
+  height: 40px;
+  background-color: var(--netflix-red);
+  color: var(--netflix-white);
+  text-transform: capitalize;
+  &:hover {
+    background-color: var(--netflix-red-hover);
+    color: var(--netflix-white);
+  }
+}

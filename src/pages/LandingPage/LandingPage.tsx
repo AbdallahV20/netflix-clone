@@ -14,7 +14,6 @@ const LandingPage = () => {
         </div>
       </nav>
       <div className="background d-flex flex-column justify-content-center align-items-center">
-        <div className="overlay"></div>
         <div className="content text-center">
           <h1>Unlimited movies, TV shows, and more</h1>
           <p>Watch anywhere. Cancel anytime.</p>

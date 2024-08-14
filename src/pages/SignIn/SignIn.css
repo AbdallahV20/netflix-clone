@@ -1,17 +1,56 @@
 .signin-section {
-  background: url("../../assets/images/background.webp");
-  position: relative;
-  z-index: 2;
+  background: url("../../assets/images/netflix-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
-.signin-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+.signin-form {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 450px;
+  padding: 48px 68px;
 }
-h1 {
+.signin-title {
+  font-size: 32px;
+  margin-bottom: 28px;
+}
+
+.remember-me-box {
+  cursor: default;
+  gap: 12px;
+}
+.checkbox {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+.check,
+.checkbox {
+  transition: 0.5s;
+}
+.remember-me {
+  user-select: none;
+}
+.remember-me-box:hover .checkbox {
+  border: 1px solid white;
+  background-color: gray;
+}
+
+.need-help {
   color: var(--netflix-white);
+}
+.need-help:hover,
+.new-to-netflix,
+.captcha {
+  color: var(--netflix-gray);
+}
+.signup,
+.signup:hover {
+  color: var(--netflix-white);
+}
+.captcha {
+  font-size: 13px;
 }
