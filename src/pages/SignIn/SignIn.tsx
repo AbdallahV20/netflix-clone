@@ -3,8 +3,8 @@ import "./SignIn.css";
 import NetflixLogo from "../../assets/images/netflix-logo.svg";
 import Button from "../../components/Button/Button";
 import { GoCheck } from "react-icons/go";
-import { MouseEventHandler, useState } from "react";
-import InputText from "../../components/Button/InputText/InputText";
+import { useState } from "react";
+import InputText from "../../components/InputText/InputText";
 const SignIn = () => {
   const [displayCheck, setDisplayCheck] = useState(true);
   const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
