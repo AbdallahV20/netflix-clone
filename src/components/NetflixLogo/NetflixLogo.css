@@ -1,0 +1,8 @@
+.netfli-logo {
+  width: 150px;
+}
+@media screen and (max-width: 960px) {
+  .netfli-logo {
+    width: 90px;
+  }
+}
