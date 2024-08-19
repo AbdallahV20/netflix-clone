@@ -6,6 +6,7 @@ import "../../components/MiddleSection/MiddleSection";
 import MiddleSection from "../../components/MiddleSection/MiddleSection";
 import FAQSection from "../../components/FAQSection/FAQSection";
 import EmailSubscription from "../../components/EmailSubscription/EmailSubscription";
+import Footer from "../../components/Footer/Footer";
 const LandingPage = () => {
   return (
     <div>
@@ -70,6 +71,9 @@ const LandingPage = () => {
       </section>
       <section>
         <FAQSection />
+      </section>
+      <section>
+        <Footer />
       </section>
     </div>
   );
