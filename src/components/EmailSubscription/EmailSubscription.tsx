@@ -1,6 +1,6 @@
 import React from 'react';
-import ButtonComponent from '../ButtonComponent/ButtonComponent'; // تأكد من مسار ButtonComponent الصحيح
-import './EmailSubscription.css'; // تأكد من وجود هذا الملف إذا كان هناك تنسيق مخصص
+import ButtonComponent from '../ButtonComponent/ButtonComponent';
+import './EmailSubscription.css'; 
 
 const EmailSubscription = () => {
   return (

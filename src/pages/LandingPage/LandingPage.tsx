@@ -6,6 +6,7 @@ import "../../components/MiddleSection/MiddleSection";
 import MiddleSection from "../../components/MiddleSection/MiddleSection";
 import FAQSection from "../../components/FAQSection/FAQSection";
 import EmailSubscription from "../../components/EmailSubscription/EmailSubscription";
+import NetflixLogo from "../../components/NetflixLogo/NetflixLogo";
 const LandingPage = () => {
   return (
     <div>
@@ -14,7 +15,7 @@ const LandingPage = () => {
           <div className="row w-100 justify-content-center align-items-center py-4">
             <div className="col-4">
               <a className="navbar-brand logo" href="#">
-                <img src={logo} alt="Netflix Logo" className="logo-img" />
+                <NetflixLogo/>
               </a>
             </div>
             <div className="col-4 text-end">
