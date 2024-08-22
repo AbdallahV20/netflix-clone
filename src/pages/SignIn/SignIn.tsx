@@ -4,30 +4,79 @@ import Button from "../../components/Button/Button";
 import { GoCheck } from "react-icons/go";
 import { useState } from "react";
 import InputText from "../../components/InputText/InputText";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom"; // Import useNavigate
 import NetflixLogo from "../../components/NetflixLogo/NetflixLogo";
+import { useAuth } from "../../contexts/authContext";
+import { doSignIn, doSignOut } from "../../firebaseAuth/auth";
+import { auth } from "../../firebaseAuth/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
 const SignIn = () => {
   const [displayCheck, setDisplayCheck] = useState(true);
+  const { loggedIn } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [signingIn, setSigningIn] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
+  const [error, setError] = useState("");
   const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
+    if (!signingIn) {
+      setSigningIn(true);
+      signInWithEmailAndPassword(auth, email, password)
+        .then((cred) => {
+          setError("");
+          navigate("/home", { state: { email, password } });
+        })
+        .catch((err) => {
+          switch (err.code) {
+            case "auth/invalid-email":
+              email.length === 0
+                ? setError("Please Enter You Email")
+                : setError("Enter a Valid Email");
+              console.log(email.length);
+              break;
+            case "auth/missing-password":
+              setError("Please Enter Your Password");
+              break;
+            case "auth/invalid-credential":
+              setError("Invalid Email Or Password");
+              break;
+          }
+          console.log(err.code);
+        }); // Assuming doSignIn returns a boolean or some status
+    }
   };
+
   return (
     <section className="signin-section d-flex justify-content-center overflow-hidden px-4 px-lg-0 pt-4">
       <div className="container-lg">
-        <NavLink to={'/'}>
+        <NavLink to={"/"}>
           <NetflixLogo />
         </NavLink>
         <div className="row justify-content-center mt-5">
           <div className="signin-form">
             <h1 className="signin-title">Sign In</h1>
             <form className="d-flex flex-column gap-4">
-              <InputText label="Email or mobile number" />
-              <InputText label="Password" />
-              <Button title="sign in" handleOnClick={handleOnClick} />
+              <InputText
+                label="Email or mobile number"
+                value={email}
+                setValueChange={setEmail}
+              />
+              <InputText
+                label="Password"
+                value={password}
+                setValueChange={setPassword}
+              />
+              {error}
+              <NavLink to="#" title="sign in" onClick={handleOnClick}>
+                Log IN Here
+              </NavLink>
+              <button onClick={doSignOut}>Log Out</button>
             </form>
             <div className="d-flex justify-content-between align-items-center mt-4">
               <div
-                className="remember-me-box d-flex "
+                className="remember-me-box d-flex"
                 onClick={() => setDisplayCheck(!displayCheck)}
               >
                 <div
@@ -41,8 +90,7 @@ const SignIn = () => {
                     className="check"
                     style={{ opacity: displayCheck ? 1 : 0 }}
                   >
-                    <GoCheck fill="black" size={14} />{" "}
-                    {/* you can use stroke for the background */}
+                    <GoCheck fill="black" size={14} />
                   </span>
                 </div>
                 <span className="remember-me">Remember me</span>
