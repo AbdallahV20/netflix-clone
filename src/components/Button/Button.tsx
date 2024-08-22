@@ -1,5 +1,5 @@
-import { MouseEventHandler } from "react";
 import "./Button.css";
+import React from "react";
 
 type ButtonTypes = {
   title: string;

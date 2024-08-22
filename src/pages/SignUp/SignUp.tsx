@@ -7,6 +7,7 @@ import NetflixLogo from "../../components/NetflixLogo/NetflixLogo";
 import { useState } from "react";
 import { doRegister } from "../../firebaseAuth/auth";
 const SignUp = () => {
+  const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleOnClick = async (e: React.MouseEvent<HTMLElement>) => {
@@ -21,7 +22,11 @@ const SignUp = () => {
           <div className="signin-form">
             <h1 className="signin-title">Sign Up</h1>
             <form className="d-flex flex-column gap-4">
-              <InputText label="First Name" />
+              <InputText
+                label="First Name"
+                value={firstName}
+                setValueChange={setFirstName}
+              />
               <InputText
                 label="Email Address"
                 value={email}

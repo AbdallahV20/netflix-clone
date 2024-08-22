@@ -10,10 +10,10 @@ import { useAuth } from "../../contexts/authContext";
 import { doSignIn, doSignOut } from "../../firebaseAuth/auth";
 import { auth } from "../../firebaseAuth/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import React from "react";
 
 const SignIn = () => {
   const [displayCheck, setDisplayCheck] = useState(true);
-  const { loggedIn } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [signingIn, setSigningIn] = useState(false);
@@ -21,31 +21,28 @@ const SignIn = () => {
   const [error, setError] = useState("");
   const handleOnClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    if (!signingIn) {
-      setSigningIn(true);
-      signInWithEmailAndPassword(auth, email, password)
-        .then((cred) => {
-          setError("");
-          navigate("/home", { state: { email, password } });
-        })
-        .catch((err) => {
-          switch (err.code) {
-            case "auth/invalid-email":
-              email.length === 0
-                ? setError("Please Enter You Email")
-                : setError("Enter a Valid Email");
-              console.log(email.length);
-              break;
-            case "auth/missing-password":
-              setError("Please Enter Your Password");
-              break;
-            case "auth/invalid-credential":
-              setError("Invalid Email Or Password");
-              break;
-          }
-          console.log(err.code);
-        }); // Assuming doSignIn returns a boolean or some status
-    }
+    signInWithEmailAndPassword(auth, email, password)
+      .then((cred) => {
+        setError("");
+        navigate("/home", { state: { email, password } });
+      })
+      .catch((err) => {
+        setSigningIn(false);
+        switch (err.code) {
+          case "auth/invalid-email":
+            email.length === 0
+              ? setError("Please Enter You Email")
+              : setError("Enter a Valid Email");
+            break;
+          case "auth/missing-password":
+            setError("Please Enter Your Password");
+            break;
+          case "auth/invalid-credential":
+            setError("Invalid Email Or Password");
+            break;
+        }
+        console.log(err.code);
+      }); // Assuming doSignIn returns a boolean or some status
   };
 
   return (
@@ -68,11 +65,8 @@ const SignIn = () => {
                 value={password}
                 setValueChange={setPassword}
               />
-              {error}
-              <NavLink to="#" title="sign in" onClick={handleOnClick}>
-                Log IN Here
-              </NavLink>
-              <button onClick={doSignOut}>Log Out</button>
+              {error && <span className="err-msg">{error}</span>}
+              <Button title="sign in" handleOnClick={handleOnClick} />
             </form>
             <div className="d-flex justify-content-between align-items-center mt-4">
               <div
