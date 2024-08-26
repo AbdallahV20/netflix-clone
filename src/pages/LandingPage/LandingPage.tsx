@@ -7,6 +7,8 @@ import MiddleSection from "../../components/MiddleSection/MiddleSection";
 import FAQSection from "../../components/FAQSection/FAQSection";
 import EmailSubscription from "../../components/EmailSubscription/EmailSubscription";
 import NetflixLogo from "../../components/NetflixLogo/NetflixLogo";
+import Footer from "../../components/Footer/Footer";
+import { NavLink } from "react-router-dom";
 const LandingPage = () => {
   return (
     <div>
@@ -20,7 +22,9 @@ const LandingPage = () => {
             </div>
             <div className="col-4 text-end">
               <ButtonComponent type="select" />
-              <ButtonComponent text="Sign In" type="button" />
+              <NavLink to="/signin">
+                <ButtonComponent text="Sign In" type="button" />
+              </NavLink>
             </div>
           </div>
         </nav>
@@ -71,6 +75,9 @@ const LandingPage = () => {
       </section>
       <section>
         <FAQSection />
+      </section>
+      <section>
+        <Footer />
       </section>
     </div>
   );

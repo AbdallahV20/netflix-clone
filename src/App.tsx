@@ -5,16 +5,19 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/Home/Home";
+import { AuthProvider } from "./contexts/authContext";
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" Component={LandingPage} />
-        <Route path="/signin" Component={SignIn} />
-        <Route path="/signup" Component={SignUp} />
-        <Route path="/home" Component={Home} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" Component={LandingPage} />
+          <Route path="/signin" Component={SignIn} />
+          <Route path="/signup" Component={SignUp} />
+          <Route path="/home" Component={Home} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 

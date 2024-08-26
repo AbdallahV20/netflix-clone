@@ -15,6 +15,11 @@
   margin-bottom: 28px;
 }
 
+.err-msg {
+  color: var(--netflix-red);
+  font-size: 13px;
+}
+
 .remember-me-box {
   cursor: default;
   gap: 12px;

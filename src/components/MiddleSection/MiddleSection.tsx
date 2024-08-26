@@ -14,7 +14,7 @@ const MiddleSection: React.FC<MiddleSectionProps> = (props: MiddleSectionProps) 
     return(
         <div className='ms-div'>
             <div className='container h-100'>
-                <div className='row h-100 justify-content-center align-items-center vw-100'>
+                <div className='row h-100 justify-content-center align-items-center'>
                     {!props.textLeft && (
                         <div className='col-md-5 col-video'>
                             {props.video!=='' && (

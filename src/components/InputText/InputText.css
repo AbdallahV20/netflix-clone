@@ -6,7 +6,6 @@
   color: var(--netflix-gray);
   position: absolute;
   left: 1rem;
-  top: 1rem;
   transition: 0.3s;
   pointer-events: none;
 }
@@ -16,7 +15,7 @@
   border-radius: 5px;
   width: 100%;
 }
-.input-text:focus + .label {
+/* .input-text:focus + .label {
   top: 5px;
   font-size: 13px;
-}
+} */
