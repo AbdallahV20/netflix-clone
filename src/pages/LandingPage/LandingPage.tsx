@@ -9,6 +9,7 @@ import FAQSection from "../../components/FAQSection/FAQSection";
 import EmailSubscription from "../../components/EmailSubscription/EmailSubscription";
 import Footer from "../../components/Footer/Footer";
 import { NavLink } from "react-router-dom";
+import TrendingSection from "../../components/TrendingSection/TrendingSection";
 const LandingPage = () => {
   return (
     <div>
@@ -39,7 +40,9 @@ const LandingPage = () => {
         <CurveSection />
       </section>
 
-    
+      <section>
+        <TrendingSection />
+      </section>
 
       <section>
         <FAQSection />

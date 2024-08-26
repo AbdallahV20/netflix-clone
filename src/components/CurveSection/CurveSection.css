@@ -16,7 +16,7 @@
     overflow: hidden;
     z-index: 1;
     background: transparent;
-    width: 100%;
+    width: 170%;
 }
 
 .cs-div-main::before{
@@ -40,5 +40,5 @@
     height: 100%;
     border-top-left-radius: 50% 100%;
     border-top-right-radius: 50% 100%;
-    margin-top: 0.3rem;
+    margin-top: 0.2rem;
 }
