@@ -11,6 +11,7 @@ import NetflixLogo from "../../components/NetflixLogo/NetflixLogo";
 import Footer from "../../components/Footer/Footer";
 import { NavLink } from "react-router-dom";
 import TrendingSection from "../../components/TrendingSection/TrendingSection";
+import JoinSection from "../../components/JoinSection/JoinSection";
 const LandingPage = () => {
   return (
     <div>
@@ -45,7 +46,9 @@ const LandingPage = () => {
       <section>
         <TrendingSection />
       </section>
-
+      <section>
+        <JoinSection />
+      </section>
       <section>
         <FAQSection />
       </section>

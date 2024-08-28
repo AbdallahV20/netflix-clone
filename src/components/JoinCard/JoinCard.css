@@ -1,0 +1,19 @@
+.jc-div-main{
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+    padding: 1.5rem 1rem 6rem 1rem;
+}
+
+.jc-h3-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.jc-p-description{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1rem;
+}
