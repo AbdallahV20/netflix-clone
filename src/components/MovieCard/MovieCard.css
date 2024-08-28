@@ -2,8 +2,8 @@
     border-radius: 0.5rem;
     transition: transform 0.2s ease-in-out;
     border: none;
-    width: 11.2rem;
-    height: 15rem;
+    width: 12rem;
+    height: 15.5rem;
     position: relative;
 }
 
@@ -13,8 +13,8 @@
 } */
 
 .img-movie-card{
-    width: 11.2rem;
-    height: 15rem;
+    width: 12rem;
+    height: 15.5rem;
     border-radius: 0.5rem;
 }
 
