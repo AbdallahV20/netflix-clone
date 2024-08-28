@@ -6,7 +6,7 @@
 }
 
 .ts-h2-trending{
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-weight: 500;
 }
 
@@ -34,4 +34,32 @@
 .ts-select:focus{
     outline: rgb(255, 255, 255) solid 0.125rem;
     outline-offset: 0.125rem;
+}
+
+.tc-div-cards-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.8rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    height: 18rem;
+}
+
+.tc-div-cards-list::-webkit-scrollbar{
+    display: none;
+}
+
+.ts-div-card{
+    margin-left: 1rem;
+    margin-right: 2rem;
+    overflow: visible;
+    transition: transform 0.2s ease-in-out;
+}
+
+.ts-div-card:hover{
+    cursor: pointer;
+    transform: scale(1.05);
 }
