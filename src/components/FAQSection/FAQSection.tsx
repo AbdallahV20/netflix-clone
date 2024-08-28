@@ -14,7 +14,7 @@ const FAQSection = () => {
   return (
     <div className="faq-section py-5">
       <div className="container">
-        <h2 className="text-center mb-4">Frequently Asked Questions</h2>
+        <h2 className="mb-4">Frequently Asked Questions</h2>
         <div className="accordion" id="faqAccordion">
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingOne">

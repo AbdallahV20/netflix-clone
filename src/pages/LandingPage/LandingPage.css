@@ -5,6 +5,7 @@
   height: 100vh;
   width: 100vw;
   position: relative;
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
 }
 
 .overlay {
@@ -25,7 +26,7 @@
 }
 
 .navbar {
-  padding: 10px 0;
+  padding: 0;
   background-color: transparent; 
   position: absolute;
   top: 0;
@@ -37,6 +38,11 @@
 .logo-img {
   max-height: 40px;
   width: auto;
+}
+
+.header {
+  font-size: 64px;
+
 }
 
 .email-input {

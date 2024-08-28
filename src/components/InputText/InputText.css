@@ -1,5 +1,7 @@
 .input-text-container {
   position: relative;
+  flex-grow: 1; /* السماح لحقل الإدخال بالنمو ليشغل المساحة المتاحة */
+  max-width: 400px; /* تحديد أقصى عرض لحقل الإدخال */
 }
 
 .label {
@@ -9,13 +11,10 @@
   transition: 0.3s;
   pointer-events: none;
 }
+
 .input-text {
   background-color: #161616b3;
   border: 1px solid #5f5f5e;
   border-radius: 5px;
   width: 100%;
 }
-/* .input-text:focus + .label {
-  top: 5px;
-  font-size: 13px;
-} */
